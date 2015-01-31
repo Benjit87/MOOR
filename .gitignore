@@ -4,3 +4,4 @@ build/**
 .classpath
 .springBeans
 Thumbs.db
+bin/**
