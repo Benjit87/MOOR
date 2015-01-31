@@ -1,0 +1,25 @@
+<html>
+	<head th:include="fragments/header :: header"/>
+	<head>
+		<title>Admin Log In</title>
+	</head>
+	<body>
+		<div th:replace="fragments/header :: navbar" />   
+	    <div class="container">        
+	        <form class="form-signin" th:action="@{/login}" method="post">
+		        <label for="username" class="sr-only">Username</label>
+		        <input type="text" name="username" id="inputEmail" class="form-control" placeholder="username" required="true" autofocus="true"/>
+		        <label for="inputPassword" class="sr-only">Password</label>
+		        <input type="password" name="password" id="inputPassword" class="form-control" placeholder="password" required="true"/>
+		        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+		    </form>
+		<div th:if="${param.error}">
+			Invalid username and password.
+		</div>
+		<div th:if="${param.logout}">
+			You have been logged out.
+		</div>
+        </div> 
+		<footer th:replace="fragments/header :: footer"></footer>
+	</body>
+</html>
